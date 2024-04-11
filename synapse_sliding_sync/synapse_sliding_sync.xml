@@ -21,6 +21,8 @@ SYNCV3_DB            Required. The postgres connection string: https://www.postg
 SYNCV3_SECRET        Required. A secret to use to encrypt access tokens. Must remain the same for the lifetime of the database.&#xD;
 SYNCV3_BINDADDR      Default: 0.0.0.0:8008. The interface and port to listen on. (Supports unix socket: /path/to/socket)&#xD;
 &#xD;
+Create the secret with: openssl rand -hex 32&#xD;
+&#xD;
 More Information: https://github.com/matrix-org/sliding-sync</Overview>
   <Category>Productivity: Tools: Network:Voip Network:Messenger</Category>
   <WebUI/>
@@ -29,7 +31,7 @@ More Information: https://github.com/matrix-org/sliding-sync</Overview>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1712833768</DateInstalled>
+  <DateInstalled>1712833974</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
