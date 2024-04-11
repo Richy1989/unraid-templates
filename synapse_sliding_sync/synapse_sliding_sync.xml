@@ -22,14 +22,14 @@ SYNCV3_SECRET        Required. A secret to use to encrypt access tokens. Must re
 SYNCV3_BINDADDR      Default: 0.0.0.0:8008. The interface and port to listen on. (Supports unix socket: /path/to/socket)&#xD;
 &#xD;
 More Information: https://github.com/matrix-org/sliding-sync</Overview>
-  <Category/>
+  <Category>Productivity: Tools: Network:Voip Network:Messenger</Category>
   <WebUI/>
   <TemplateURL/>
   <Icon>https://avatars.githubusercontent.com/u/8418310?s=48&amp;amp;v=4</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1712833216</DateInstalled>
+  <DateInstalled>1712833768</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
