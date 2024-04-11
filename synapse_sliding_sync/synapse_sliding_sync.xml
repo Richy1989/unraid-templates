@@ -27,11 +27,11 @@ More Information: https://github.com/matrix-org/sliding-sync</Overview>
   <Category>Productivity: Tools: Network:Voip Network:Messenger</Category>
   <WebUI/>
   <TemplateURL/>
-  <Icon>https://avatars.githubusercontent.com/u/8418310?s=48&amp;amp;v=4</Icon>
+  <Icon>https://raw.githubusercontent.com/Richy1989/unraid-templates/main/icons/matrix.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1712833974</DateInstalled>
+  <DateInstalled>1712834293</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
