@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Matrix-Synapse-SlidingSync</Name>
+  <Repository>ghcr.io/matrix-org/sliding-sync:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/matrix-org/sliding-sync</Project>
+  <Overview>Run a sliding sync proxy. An implementation of MSC3575 for you Synapse Backend. &#xD;
+&#xD;
+Setup Process: &#xD;
+&#xD;
+Requires Postgres 13+.&#xD;
+createdb syncv3&#xD;
+&#xD;
+SYNCV3_SERVER        Required. The destination homeserver to talk to (CS API HTTPS URL) e.g 'https://matrix-client.matrix.org' (Supports unix socket: /path/to/socket)&#xD;
+SYNCV3_DB            Required. The postgres connection string: https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING&#xD;
+SYNCV3_SECRET        Required. A secret to use to encrypt access tokens. Must remain the same for the lifetime of the database.&#xD;
+SYNCV3_BINDADDR      Default: 0.0.0.0:8008. The interface and port to listen on. (Supports unix socket: /path/to/socket)&#xD;
+&#xD;
+More Information: https://github.com/matrix-org/sliding-sync</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://avatars.githubusercontent.com/u/8418310?s=48&amp;amp;v=4</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1712833216</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="SYNCV3_SERVER" Target="SYNCV3_SERVER" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">http://192.168.0.246:8008</Config>
+  <Config Name="SYNCV3_SECRET" Target="SYNCV3_SECRET" Default="" Mode="" Description="Create with: openssl rand -hex 32" Type="Variable" Display="always" Required="false" Mask="false">c4791d8f47bcc2361ae25c4e4a31e66b6ea878ba1834514228b3024bf4b633d5</Config>
+  <Config Name="SYNCV3_BINDADDR" Target="SYNCV3_BINDADDR" Default="0.0.0.0:8009" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0:8009</Config>
+  <Config Name="SYNCV3_DB" Target="SYNCV3_DB" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">user=synapse_user dbname=syncv3 sslmode=disable host=192.168.0.246 password='vo$2UA9$x#WUxj'</Config>
+  <Config Name="Port" Target="8009" Default="8009" Mode="tcp" Description="8009 to not interfere with our default synapse installation on 8008" Type="Port" Display="always" Required="false" Mask="false">8009</Config>
+</Container>
