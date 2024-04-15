@@ -35,7 +35,7 @@ More Information: https://github.com/matrix-org/sliding-sync</Overview>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="SYNCV3_SERVER" Target="SYNCV3_SERVER" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">http://IP:8008</Config>
+  <Config Name="SYNCV3_SERVER" Target="SYNCV3_SERVER" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">http://192.168.0.10:8008</Config>
   <Config Name="SYNCV3_SECRET" Target="SYNCV3_SECRET" Default="" Mode="" Description="Create with: openssl rand -hex 32" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="SYNCV3_BINDADDR" Target="SYNCV3_BINDADDR" Default="0.0.0.0:8009" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0:8009</Config>
   <Config Name="SYNCV3_DB" Target="SYNCV3_DB" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">user=user dbname=dbname sslmode=disable host=IP Port=Port password='password'</Config>
