@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/161773-matrixsignalbridge-support-thread/</Support>
   <Project>https://docs.mau.fi/bridges/general/docker-setup.html?bridge=signal</Project>
   <Overview>A bridge for Signal and Matrix. &#xD;
 &#xD;
