@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MatrixSignalBridge</Name>
+  <Repository>dock.mau.dev/mautrix/signal:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://docs.mau.fi/bridges/general/docker-setup.html?bridge=signal</Project>
+  <Overview>A bridge for Signal and Matrix. &#xD;
+&#xD;
+Requirements&#xD;
+ - Docker&#xD;
+ - A Matrix homeserver that supports application services (e.g. Synapse) You need access to register an appservice, which usually involves editing the homeserver config file.&#xD;
+ - A Signal client that can add linked devices (both official mobile apps and some unofficial clients like signal-cli work).&#xD;
+&#xD;
+Initial Bridge Config Help:&#xD;
+ - https://docs.mau.fi/bridges/general/initial-config.html&#xD;
+&#xD;
+Authentication Help:&#xD;
+ - https://docs.mau.fi/bridges/go/signal/authentication.html</Overview>
+  <Category>Productivity: Network:Messenger</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Richy1989/unraid-icons/main/icons/signal.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1713258376</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="data" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/matrix_signal_bridge</Config>
+  <Config Name="Port" Target="29328" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">29328</Config>
+  <Config Name="UID" Target="UID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="GID" Target="GID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+</Container>
