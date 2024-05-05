@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>mumble-server</Name>
+  <Repository>mumblevoip/mumble-server:latest</Repository>
+  <Registry>https://github.com/mumble-voip/mumble-docker</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://www.mumble.info/</Project>
+  <Overview>Mumble is a free, open source, low latency, high quality voice chat application.&#xD;
+&#xD;
+Installation: You need to make sure that Mumble has access rights to the configured /data folder. (Change Permissio with Unraid File Manager)&#xD;
+&#xD;
+Create a config.ini file in the /data path and cofigure to your desire: https://wiki.mumble.info/wiki/Murmur.ini&#xD;
+&#xD;
+Minimum Needed Config: &#xD;
+&#xD;
+# Path to database. If blank, will search for&#xD;
+# murmur.sqlite in default locations or create it if not found.&#xD;
+database=/data/murmur.sqlite&#xD;
+&#xD;
+welcometext="HELLO"&#xD;
+&#xD;
+serverpassword=YOURPASSWORD&#xD;
+bonjour=false&#xD;
+&#xD;
+registerName=YOUR_SERVER_NAME</Overview>
+  <Category>Productivity: Network:Voip Network:Messenger</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/mumble.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Richy1989/unraid-icons/main/icons/mumble.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1714912436</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Port TCP" Target="64738" Default="64738" Mode="tcp" Description="64738 TCP" Type="Port" Display="always" Required="true" Mask="false">64700</Config>
+  <Config Name="Port UDP" Target="64738" Default="64738" Mode="udp" Description="64738 UDP" Type="Port" Display="always" Required="true" Mask="false">64700</Config>
+  <Config Name="Appdata" Target="/data" Default="/mnt/user/appdata/mumble/" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/mumble_new</Config>
+  <Config Name="MUMBLE_SUPERUSER_PASSWORD" Target="MUMBLE_SUPERUSER_PASSWORD" Default="Password" Mode="" Description="MUMBLE_SUPERUSER_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MUMBLE_CUSTOM_CONFIG_FILE" Target="MUMBLE_CUSTOM_CONFIG_FILE" Default="" Mode="" Description="The config file path" Type="Variable" Display="always" Required="false" Mask="false">/data/config.ini</Config>
+</Container>
