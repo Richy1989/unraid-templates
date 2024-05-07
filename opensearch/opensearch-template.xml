@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>opensearch</Name>
+  <Repository>opensearchproject/opensearch:2</Repository>
+  <Registry>https://hub.docker.com/r/opensearchproject/opensearch/tags</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://opensearch.org/</Project>
+  <Overview>OpenSearch is a scalable, flexible, and extensible open-source software suite for search, analytics, and observability applications derived from Elasticsearch 7.10.2 and Kibana 7.10.2 and licensed under Apache 2.0. It consists of a search engine daemon (OpenSearch) and a user interface for data administration and visualizations (OpenSearch Dashboards).&#xD;
+&#xD;
+Make sure Opensearch has access rights to the "Log Data" folder. Permissions may need to be fixed with integrated Unraid File Manager.&#xD;
+&#xD;
+Directions below MUST be used in order to get Elasticsearch 5 and above working correctly. Check support thread for more information.&#xD;
+&#xD;
+        Directions:&#xD;
+&#xD;
+        1. Install CA User Scripts&#xD;
+        2. Create a new script named "set_max_map_count"&#xD;
+        3. Contents of script as follows:&#xD;
+&#xD;
+                     #!/bin/bash&#xD;
+                     sysctl -w vm.max_map_count=262144&#xD;
+&#xD;
+        4. Set script schedule to At Startup of Array</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Richy1989/unraid-icons/main/icons/opensearch.png</Icon>
+  <ExtraParams>--ulimit nofile=262144:262144</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1715071447</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Log Data" Target="/usr/share/opensearch/data" Default="" Mode="rw" Description="Log Data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/database/opensearch/log_data</Config>
+  <Config Name="OPENSEARCH_JAVA_OPTS" Target="OPENSEARCH_JAVA_OPTS" Default="-Xms1g -Xmx1g" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">-Xms1g -Xmx1g</Config>
+  <Config Name="bootstrap.memory_lock" Target="bootstrap.memory_lock" Default="true" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="discovery.type" Target="discovery.type" Default="single-node" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">single-node</Config>
+  <Config Name="action.auto_create_index" Target="action.auto_create_index" Default="false" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="plugins.security.ssl.http.enabled" Target="plugins.security.ssl.http.enabled" Default="false" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="plugins.security.disabled" Target="plugins.security.disabled" Default="true" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="OPENSEARCH_INITIAL_ADMIN_PASSWORD" Target="OPENSEARCH_INITIAL_ADMIN_PASSWORD" Default="SetPassw0rdL3ttersAndNumb3r5" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">cLN5dupv3h1n156Hj91</Config>
+  <Config Name="Port" Target="9200" Default="9200" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">9200</Config>
+</Container>
