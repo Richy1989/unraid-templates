@@ -43,6 +43,6 @@ Directions below MUST be used in order to get Elasticsearch 5 and above working 
   <Config Name="action.auto_create_index" Target="action.auto_create_index" Default="false" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="plugins.security.ssl.http.enabled" Target="plugins.security.ssl.http.enabled" Default="false" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="plugins.security.disabled" Target="plugins.security.disabled" Default="true" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
-  <Config Name="OPENSEARCH_INITIAL_ADMIN_PASSWORD" Target="OPENSEARCH_INITIAL_ADMIN_PASSWORD" Default="SetPassw0rdL3ttersAndNumb3r5" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">cLN5dupv3h1n156Hj91</Config>
+  <Config Name="OPENSEARCH_INITIAL_ADMIN_PASSWORD" Target="OPENSEARCH_INITIAL_ADMIN_PASSWORD" Default="SetPassw0rdL3ttersAndNumb3r5" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="Port" Target="9200" Default="9200" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">9200</Config>
 </Container>
