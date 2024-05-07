@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/164644-opensearch-support-thread/</Support>
   <Project>https://opensearch.org/</Project>
   <Overview>OpenSearch is a scalable, flexible, and extensible open-source software suite for search, analytics, and observability applications derived from Elasticsearch 7.10.2 and Kibana 7.10.2 and licensed under Apache 2.0. It consists of a search engine daemon (OpenSearch) and a user interface for data administration and visualizations (OpenSearch Dashboards).&#xD;
 &#xD;
