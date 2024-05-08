@@ -13,9 +13,7 @@
 &#xD;
 Make sure Opensearch has access rights to the "Log Data" folder. Permissions may need to be fixed with integrated Unraid File Manager.&#xD;
 &#xD;
-Directions below MUST be used in order to get Elasticsearch 5 and above working correctly. Check support thread for more information.&#xD;
-&#xD;
-        Directions:&#xD;
+Steps below MUST be used in order to get Opensearch working correctly. Check support thread for more information.&#xD;
 &#xD;
         1. Install CA User Scripts&#xD;
         2. Create a new script named "set_max_map_count"&#xD;
