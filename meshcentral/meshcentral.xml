@@ -14,7 +14,7 @@
 For more information, visit MeshCentral.com.&#xD;
 </Overview>
   <Category>HomeAutomation: Tools:</Category>
-  <WebUI>http://[IP]:[PORT:59642]</WebUI>
+  <WebUI>http://[IP]:[PORT:8086]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/Richy1989/unraid-icons/main/icons/meshcentral.png</Icon>
   <ExtraParams/>
