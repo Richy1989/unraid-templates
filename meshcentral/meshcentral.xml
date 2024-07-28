@@ -11,7 +11,14 @@
   <Project>https://github.com/Ylianst/MeshCentral</Project>
   <Overview>MeshCentral is a full computer management web site. With MeshCentral, you can run your own web server to remotely manage and control computers on a local network or anywhere on the internet. Once you get the server started, create device group and download and install an agent on each computer you want to manage. A minute later, the new computer will show up on the web site and you can take control of it. MeshCentral includes full web-based remote desktop, terminal and file management capability.&#xD;
 &#xD;
-For more information, visit MeshCentral.com.&#xD;
+For more information, visit &#xD;
+https://meshcentral.com/&#xD;
+https://github.com/Ylianst/MeshCentral&#xD;
+&#xD;
+While easier to setup and get up and running, you should still peer through the very informative official guides:&#xD;
+https://meshcentral.com/info/docs/MeshCentral2InstallGuide.pdf&#xD;
+https://meshcentral.com/info/docs/MeshCentral2UserGuide.pdf&#xD;
+&#xD;
 </Overview>
   <Category>HomeAutomation: Tools:</Category>
   <WebUI>http://[IP]:[PORT:8086]</WebUI>
