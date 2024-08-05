@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MeshCentral</Name>
+  <Repository>richy1989/meshcentral</Repository>
+  <Registry>https://hub.docker.com/repository/docker/richy1989/meshcentral/general</Registry>
+  <Network>reverseproxynetwork</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/171306-meshcentral-support-thread/</Support>
+  <Project>https://github.com/Ylianst/MeshCentral</Project>
+  <Overview>MeshCentral is a full computer management web site. With MeshCentral, you can run your own web server to remotely manage and control computers on a local network or anywhere on the internet. Once you get the server started, create device group and download and install an agent on each computer you want to manage. A minute later, the new computer will show up on the web site and you can take control of it. MeshCentral includes full web-based remote desktop, terminal and file management capability.&#xD;
+&#xD;
+To check how this container was created check the source code from: https://github.com/Richy1989/meshcentral-docker there are no modifications to the MeshCentral code, I only created the container to work better with Unraid.&#xD;
+For more information, visit &#xD;
+https://meshcentral.com/&#xD;
+https://github.com/Ylianst/MeshCentral&#xD;
+&#xD;
+While easier to setup and get up and running, you should still peer through the very informative official guides:&#xD;
+https://meshcentral.com/info/docs/MeshCentral2InstallGuide.pdf&#xD;
+https://meshcentral.com/info/docs/MeshCentral2UserGuide.pdf</Overview>
+  <Category>HomeAutomation: Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:59642]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Richy1989/unraid-templates/master/meshcentral/meshcentral.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Richy1989/unraid-icons/main/icons/meshcentral.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1722881198</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="MeshCentrals Hostname" Target="HOSTNAME" Default="my.domain.com" Mode="" Description="my.domain.com" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Data Path" Target="/opt/meshcentral/meshcentral-data" Default="/mnt/user/appdata/meshcentral/data" Mode="rw" Description="config.json and other important files live here. A must for data persistence" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshcentral/data</Config>
+  <Config Name="User File Path" Target="/opt/meshcentral/meshcentral-files" Default="/mnt/user/appdata/meshcentral/user_files" Mode="rw" Description="where file uploads for users live" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshcentral/user_files</Config>
+  <Config Name="Web File Path" Target="/opt/meshcentral/meshcentral-web" Default="/mnt/user/appdata/meshcentral/web" Mode="rw" Description="location for site customization files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshcentral/web</Config>
+  <Config Name="Backups File Path" Target="/opt/meshcentral/meshcentral-backups" Default="/mnt/user/appdata/meshcentral/backups" Mode="rw" Description="Folder for backups" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshcentral/backups</Config>
+  <Config Name="Port" Target="443" Default="8086" Mode="tcp" Description="MeshCentral where meshcentral shall be reached" Type="Port" Display="always" Required="true" Mask="false">59643</Config>
+  <Config Name="Allow new accounts" Target="ALLOW_NEW_ACCOUNTS" Default="true" Mode="" Description="set to false if you want disable self-service creation of new accounts besides the first (admin)" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="Reverse Proxy IP" Target="REVERSE_PROXY" Default="false" Mode="" Description="set to your reverse proxy IP if you want to put meshcentral behind a reverse proxy, else set fo false" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Reverse Proxy Port" Target="REVERSE_PROXY_TLS_PORT" Default="" Mode="" Description="The port of the reverse proxy server" Type="Variable" Display="always" Required="false" Mask="false">1443</Config>
+  <Config Name="MongoDB connection string" Target="MONGO_URL" Default="mongodb://<MONGODB_IP>:PORT/meshcentral" Mode="" Description="MongoDB connection string" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="USE_MONGODB" Target="USE_MONGODB" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="MongoDB User" Target="MONGO_INITDB_ROOT_USERNAME" Default="" Mode="" Description="MongoDB Username" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MondoDB Password" Target="MONGO_INITDB_ROOT_PASSWORD" Default="" Mode="" Description="MondoDB Password" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Use IFRAME" Target="IFRAME" Default="false" Mode="" Description="set to true if you wish to enable iframe support" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Use WEBRTC" Target="WEBRTC" Default="false" Mode="" Description="set to true to enable WebRTC - per documentation it is not officially released with meshcentral, but is solid enough to work with. Use with caution" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="FORCE_CREATE_CONFIG" Target="FORCE_CREATE_CONFIG" Default="false" Mode="" Description="Force the recreation of the config file, the old one will be deleted" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+</Container>
