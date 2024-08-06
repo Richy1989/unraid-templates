@@ -20,7 +20,7 @@ While easier to setup and get up and running, you should still peer through the 
 https://meshcentral.com/info/docs/MeshCentral2InstallGuide.pdf&#xD;
 https://meshcentral.com/info/docs/MeshCentral2UserGuide.pdf</Overview>
   <Category>HomeAutomation: Tools:Utilities</Category>
-  <WebUI>http://[IP]:[PORT:8086]</WebUI>
+  <WebUI>http://[IP]:[PORT:443]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Richy1989/unraid-templates/master/meshcentral/meshcentral.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Richy1989/unraid-icons/main/icons/meshcentral.png</Icon>
   <ExtraParams/>
@@ -35,7 +35,7 @@ https://meshcentral.com/info/docs/MeshCentral2UserGuide.pdf</Overview>
   <Config Name="User File Path" Target="/opt/meshcentral/meshcentral-files" Default="/mnt/user/appdata/meshcentral/user_files" Mode="rw" Description="where file uploads for users live" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshcentral/user_files</Config>
   <Config Name="Web File Path" Target="/opt/meshcentral/meshcentral-web" Default="/mnt/user/appdata/meshcentral/web" Mode="rw" Description="location for site customization files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshcentral/web</Config>
   <Config Name="Backups File Path" Target="/opt/meshcentral/meshcentral-backups" Default="/mnt/user/appdata/meshcentral/backups" Mode="rw" Description="Folder for backups" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/meshcentral/backups</Config>
-  <Config Name="Port" Target="443" Default="8086" Mode="tcp" Description="MeshCentral where meshcentral shall be reached" Type="Port" Display="always" Required="true" Mask="false">8086</Config>
+  <Config Name="Port" Target="443" Default="8086" Mode="tcp" Description="MeshCentral where meshcentral shall be reached" Type="Port" Display="always" Required="true" Mask="false"></Config>
   <Config Name="Allow new accounts" Target="ALLOW_NEW_ACCOUNTS" Default="true" Mode="" Description="set to false if you want disable self-service creation of new accounts besides the first (admin)" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
   <Config Name="Reverse Proxy IP" Target="REVERSE_PROXY" Default="false" Mode="" Description="set to your reverse proxy IP if you want to put meshcentral behind a reverse proxy, else set fo false" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="Reverse Proxy Port" Target="REVERSE_PROXY_TLS_PORT" Default="" Mode="" Description="The port of the reverse proxy server" Type="Variable" Display="always" Required="false" Mask="false">1443</Config>
