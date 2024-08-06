@@ -18,7 +18,7 @@ Create a config.ini file in the /data path and cofigure to your desire: https://
 A Basic config will be crfeated and can be adatped further. 
 &#xD;
 registerName=YOUR_SERVER_NAME</Overview>
-  <Category>Productivity: Network:Voip Network:Messenger</Category>
+  <Category>Network:Voip Network:Messenger</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/mumble.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Richy1989/unraid-icons/main/icons/mumble.png</Icon>

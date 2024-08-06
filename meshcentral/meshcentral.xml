@@ -19,7 +19,7 @@ https://github.com/Ylianst/MeshCentral&#xD;
 While easier to setup and get up and running, you should still peer through the very informative official guides:&#xD;
 https://meshcentral.com/info/docs/MeshCentral2InstallGuide.pdf&#xD;
 https://meshcentral.com/info/docs/MeshCentral2UserGuide.pdf</Overview>
-  <Category>HomeAutomation: Tools:Utilities</Category>
+  <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:443]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Richy1989/unraid-templates/master/meshcentral/meshcentral.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Richy1989/unraid-icons/main/icons/meshcentral.png</Icon>
