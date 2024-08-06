@@ -3,7 +3,7 @@
   <Name>MeshCentral</Name>
   <Repository>richy1989/meshcentral</Repository>
   <Registry>https://hub.docker.com/repository/docker/richy1989/meshcentral/general</Registry>
-  <Network>reverseproxynetwork</Network>
+  <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
