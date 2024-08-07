@@ -31,5 +31,5 @@ This can be cofigured to your desire accroding to: https://wiki.mumble.info/wiki
   <Config Name="Port UDP" Target="64738" Default="64738" Mode="udp" Description="64738 UDP" Type="Port" Display="always" Required="true" Mask="false">64700</Config>
   <Config Name="Appdata" Target="/data" Default="/mnt/user/appdata/mumble/" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/mumble</Config>
   <Config Name="MUMBLE_SUPERUSER_PASSWORD" Target="MUMBLE_SUPERUSER_PASSWORD" Default="Password" Mode="" Description="MUMBLE_SUPERUSER_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="MUMBLE_CUSTOM_CONFIG_FILE" Target="MUMBLE_CUSTOM_CONFIG_FILE" Default="" Mode="" Description="The config file path" Type="Variable" Display="always" Required="false" Mask="false">/data/config.ini</Config>
+  <Config Name="MUMBLE_CUSTOM_CONFIG_FILE" Target="MUMBLE_CUSTOM_CONFIG_FILE" Default="/data/config.ini" Mode="" Description="The config file path" Type="Variable" Display="always" Required="false" Mask="false">/data/config.ini</Config>
 </Container>
