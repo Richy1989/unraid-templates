@@ -13,11 +13,9 @@
 &#xD;
 Check out the repo where the docker is built: https://github.com/Richy1989/mumble-docker&#xD;
 &#xD;
-Create a config.ini file in the /data path and cofigure to your desire: https://wiki.mumble.info/wiki/Murmur.ini&#xD;
-
-A Basic config will be crfeated and can be adatped further. 
-&#xD;
-registerName=YOUR_SERVER_NAME</Overview>
+A basic configuration file "config.ini" will be created in the /data path.
+This can be cofigured to your desire accroding to: https://wiki.mumble.info/wiki/Murmur.ini&#xD;
+</Overview>
   <Category>Network:Voip Network:Messenger</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/mumble.xml</TemplateURL>
