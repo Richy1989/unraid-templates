@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>keepIT</Name>
+  <Repository>richy1989/keepit:latest</Repository>
+  <Registry>https://hub.docker.com/r/richy1989/keepit</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>keepIT — a Google Keep-style notes app. Single self-contained image: nginx serves the React UI and reverse-proxies the .NET API, with a SQLite database. All data (database, encryption keys, uploaded images) is stored under /data — map it to your appdata share to persist it.</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/richy1989/keepIT/main/docs/logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>keepIT — a Google Keep-style notes app (web UI + REST API). This single-container build runs the React UI behind nginx, the ASP.NET Core API, and a SQLite database in one image. Mount /data to your appdata share so your notes survive container updates. Set a long random Jwt Key before exposing it.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/keepit</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>change-me-to-a-random-secret-of-at-least-32-characters</Value>
+      <Name>Jwt__Key</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Production</Value>
+      <Name>ASPNETCORE_ENVIRONMENT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>Auth__RefreshCookie__Secure</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>App__ForwardedProxyHops</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>App__AllowRegistration</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>App__PublicBaseUrl</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>Email__SmtpHost</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>Email__From</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>Email__SmtpUsername</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>Email__SmtpPassword</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>587</Value>
+      <Name>Email__SmtpPort</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>Email__UseStartTls</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>POSTGRES_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>POSTGRES_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>POSTGRES_DB</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>POSTGRES_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>POSTGRES_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="WebUI Port" Target="80" Default="8080" Mode="tcp" Description="Host port for the keepIT web UI. Browse to http://[Unraid-IP]:[this port]." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/keepit" Mode="rw" Description="Host folder where keepIT stores its SQLite database, encryption keys and uploaded images. Point this at your appdata share to persist data across updates." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/keepit</Config>
+  <Config Name="JWT Key" Target="Jwt__Key" Default="" Description="REQUIRED. A random secret of at least 32 characters used to sign login tokens. Change this before first use; changing it later signs everyone out." Type="Variable" Display="always" Required="true" Mask="true">change-me-to-a-random-secret-of-at-least-32-characters</Config>
+  <Config Name="Environment" Target="ASPNETCORE_ENVIRONMENT" Default="Production" Description="Production (default) or Development. Development also enables the Scalar API explorer at /scalar/v1." Type="Variable" Display="advanced" Required="false" Mask="false">Production</Config>
+  <Config Name="Refresh Cookie Secure" Target="Auth__RefreshCookie__Secure" Default="false" Description="Keep false when accessing over plain http. Set true only when keepIT is served over https (e.g. behind a reverse proxy with TLS)." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="Proxy Hops" Target="App__ForwardedProxyHops" Default="1" Description="Number of reverse-proxy hops in front of the API. This image already contains one nginx hop, so: 1 = you reach keepIT directly (browser → this container); 2 = another reverse proxy such as Traefik sits in front (Traefik → nginx → api). Must be exact: too low and all clients share one rate-limit bucket; too high and clients can spoof their IP." Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="Allow Registration" Target="App__AllowRegistration" Default="true" Description="Whether new accounts may be created. If keepIT is reachable from the internet, register your own accounts first and then set this to false so strangers cannot sign up. Existing users keep working." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Public Base URL" Target="App__PublicBaseUrl" Default="" Description="Optional. Public address of your instance (e.g. https://notes.example.com), used to build password-reset links in emails. Usually auto-detected from the request; set it only if reset links point to the wrong host." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="SMTP Host" Target="Email__SmtpHost" Default="" Description="Optional. SMTP server for outgoing email (password-reset links). LEAVE EMPTY to run without email — reset links then land in the container log instead. Setting this is the switch that enables email delivery (then also set From)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="SMTP From" Target="Email__From" Default="" Description="From address for outgoing email, e.g. keepIT &lt;no-reply@example.com&gt;. Required once SMTP Host is set; ignored while SMTP Host is empty." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="SMTP Username" Target="Email__SmtpUsername" Default="" Description="Optional SMTP login username. Leave empty (with SMTP Password) for an unauthenticated relay. Ignored while SMTP Host is empty." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="SMTP Password" Target="Email__SmtpPassword" Default="" Description="Optional SMTP login password, paired with SMTP Username. Ignored while SMTP Host is empty." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="SMTP Port" Target="Email__SmtpPort" Default="587" Description="SMTP port — 587 for STARTTLS submission (default), 465 for implicit TLS (set Use STARTTLS to false too). Ignored while SMTP Host is empty." Type="Variable" Display="advanced" Required="false" Mask="false">587</Config>
+  <Config Name="Use STARTTLS" Target="Email__UseStartTls" Default="true" Description="true = STARTTLS on port 587 (default); false = implicit TLS on port 465. Ignored while SMTP Host is empty." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Postgres Host" Target="POSTGRES_HOST" Default="" Description="Optional. LEAVE EMPTY to use the built-in SQLite database (recommended for testing). This field is the switch: empty = SQLite, filled = Postgres. Set it to your Postgres host/container to switch databases (then also set Postgres Password)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Postgres Port" Target="POSTGRES_PORT" Default="" Description="Optional Postgres port (defaults to 5432 if empty). Ignored while Postgres Host is empty." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Postgres Database" Target="POSTGRES_DB" Default="" Description="Optional Postgres database name (defaults to 'keepit'). Ignored while Postgres Host is empty." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Postgres User" Target="POSTGRES_USER" Default="" Description="Optional Postgres username (defaults to 'keepit'). Ignored while Postgres Host is empty." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Description="Optional Postgres password. Ignored while Postgres Host is empty." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+</Container>
