@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/Richy1989/keepIT/issues</Support>
   <Project>https://github.com/Richy1989/keepIT</Project>
-  <Overview>keepIT — a Google Keep-style notes app. Single self-contained image: nginx serves the React UI and reverse-proxies the .NET API, with a SQLite database. All data (database, encryption keys, uploaded images) is stored under /data — map it to your appdata share to persist it.</Overview>
+  <Overview>A self-hosted notes app with sharing between users, real-time sync, search, and reminders - plus a native Android app with offline support and a home-screen widget</Overview>
   <Category>Productivity:</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
   <TemplateURL/>
